@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <h1>NEW PICTURE</h1>
+      <%= form_for(@image) do |f| %>
+      <%= f.attachment_field :image %>
+      <h3>TITLE</h3>
+      <%= f.text_field :title %>
+      <h3>CAPTION</h3>
+      <%= f.text_area :caption %>
+      <%= f.submit 'POST', class:"btn btn-info" %>
+      <% end %>
+    </div>
+  </div>
+</div>

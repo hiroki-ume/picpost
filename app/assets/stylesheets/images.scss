@@ -1,0 +1,15 @@
+// Place all the styles related to the images controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.post-image-box {
+  width: 500px;
+  height: auto;
+  border-bottom: 1px dotted gray;
+  margin-bottom: 10px;
+}
+.image-text {
+  width: 100%;
+  height: auto;
+  font-size: 20px;
+  line-height: 50px;
+}

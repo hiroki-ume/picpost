@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <h1>Picture index</h1>
+      <% @images.each do |image| %>
+      <div class="post-image-box">
+        <div class="post-image">
+          <%= attachment_image_tag image, :image, :fill, 500, 300 %><br>
+        </div>
+        <div class="image-text">
+          <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+          <%= image.title %><br>
+          <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+          <%= image.caption %>
+        </div>
+
+      </div>
+
+
+      <% end %>
+    </div>
+  </div>
+</div>
