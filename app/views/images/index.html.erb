@@ -1,7 +1,21 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-6 col-xs-offset-3">
-      <h1>Picture index</h1>
+    <div class="col-xs-3">
+
+      <p class="post-icon">
+        <%= link_to new_image_path do %>
+        <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+        <% end %>
+      </p>
+    </div>
+    <div class="col-xs-6">
+      <h3 class="delete-flash"><%= flash[:success] %></h3><br>
+      <h1 class="index-title">Picture index</h1>
+
+
+      <% if Image.blank? %>
+        <h3>No Picture</h3>
+      <% end %>
       <% @images.each do |image| %>
       <div class="post-image-box">
         <div class="post-image">
@@ -9,9 +23,21 @@
         </div>
         <div class="image-text">
           <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
-          <%= image.title %><br>
+            <% if image.title == "" %>
+               TITLE hasn't exsist yet.
+            <% end %>
+            <%= image.title %><br>
           <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
-          <%= image.caption %>
+            <% if image.caption == "" %>
+               CAPTION hasn't exsist yet.
+            <% end %>
+            <%= image.caption %><br>
+          <p class="delete-icon">
+            <%= link_to image, method: :delete do %>
+            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+            <% end %>
+          </p>
+
         </div>
 
       </div>

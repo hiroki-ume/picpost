@@ -13,5 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+
+.home {
+  font-size: 20px;
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 50px;
+}
+
 @import "bootstrap-sprockets";
 @import "bootstrap";

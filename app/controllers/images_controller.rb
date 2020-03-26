@@ -5,16 +5,20 @@ class ImagesController < ApplicationController
   def create
       @image = Image.new(image_params)
       @image.save
-      redirect_to images_path
+      redirect_to :images
   end
   def index
     @images = Image.all.reverse_order
   end
-
   def show
   end
-
   def edit
+  end
+  def destroy
+    @image = Image.find(params[:id])
+    @image.destroy
+    flash[:success] = "delete picture"
+    redirect_to :images
   end
   private
   def image_params

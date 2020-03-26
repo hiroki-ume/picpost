@@ -1,15 +1,35 @@
 // Place all the styles related to the images controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.delete-flash {
+  text-align: center;
+  color: red;
+}
+.index-title {
+  text-align: center;
+}
 .post-image-box {
   width: 500px;
   height: auto;
+  margin: 0 auto;
   border-bottom: 1px dotted gray;
   margin-bottom: 10px;
+}
+.post-image-box:last-child {
+  border-bottom: none;
 }
 .image-text {
   width: 100%;
   height: auto;
   font-size: 20px;
   line-height: 50px;
+
+}
+.delete-icon {
+  text-align: right;
+}
+.post-icon {
+  display: inline-block;
+  margin-top: 30px;
+  font-size: 50px;
 }
