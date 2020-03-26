@@ -18,31 +18,27 @@
       <% end %>
       <% @images.each do |image| %>
       <div class="post-image-box">
+        <p class="user-name"><%= link_to image.user.name, "#" %></p>
         <div class="post-image">
           <%= attachment_image_tag image, :image, :fill, 500, 300 %><br>
         </div>
-        <div class="image-text">
-          <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
-            <% if image.title == "" %>
-               TITLE hasn't exsist yet.
-            <% end %>
-            <%= image.title %><br>
+        <div class="icon-box">
+          <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
           <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
-            <% if image.caption == "" %>
-               CAPTION hasn't exsist yet.
-            <% end %>
-            <%= image.caption %><br>
-          <p class="delete-icon">
+          <span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>
+        </div>
+        <div class="delete-icon">
+          <% if image.user_id == current_user.id %>
             <%= link_to image, method: :delete do %>
             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
             <% end %>
-          </p>
-
+          <% end %>
         </div>
-
+        <div class="image-text">
+            <p　class="user-link"><%= link_to image.user.name, "#" %>
+            <%= image.caption %></p>
+        </div>
       </div>
-
-
       <% end %>
     </div>
   </div>

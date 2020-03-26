@@ -4,8 +4,6 @@
       <h1>NEW PICTURE</h1>
       <%= form_for(@image) do |f| %>
       <%= f.attachment_field :image %>
-      <h3>TITLE</h3>
-      <%= f.text_field :title %>
       <h3>CAPTION</h3>
       <%= f.text_area :caption %><br>
       <%= f.submit 'POST', class:"btn btn-info" %>

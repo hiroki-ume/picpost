@@ -5,6 +5,7 @@ class CreateImages < ActiveRecord::Migration[5.2]
       t.string :image_id
       t.text :caption
       t.string :image_category
+      t.integer :user_id
 
       t.timestamps
     end

@@ -4,6 +4,7 @@ class ImagesController < ApplicationController
   end
   def create
       @image = Image.new(image_params)
+      @image.user_id = current_user.id
       @image.save
       redirect_to :images
   end
